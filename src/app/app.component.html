@@ -1,0 +1,26 @@
+<mat-toolbar style="background-color: rgb(255, 255, 255)  ;">
+    <img src="assets\icon\logo.jpeg" style="height: 40px;" width="50px" alt="Osh Web Login">
+    <button mat-button [matMenuTriggerFor]="menu">Home</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">Categories</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <span class="example-spacer"></span>
+    <mat-icon class="margin">search</mat-icon>
+    <mat-icon class="margin">perm_identity</mat-icon>
+    <mat-icon class="margin">favorite_border</mat-icon>
+    <mat-icon class="margin">shopping_basket</mat-icon>
+    <span class="margin">عربی</span>
+    
+    <button mat-button [matMenuTriggerFor]="menu" class="margin"><img src="assets\icon\Kuwait.jpeg" alt="Kuwait" style="height: 20px;" width="25px"> Kuwait<mat-icon>arrow_drop_down</mat-icon></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+</mat-toolbar>
+<app-web-login></app-web-login>

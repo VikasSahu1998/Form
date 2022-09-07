@@ -1,0 +1,9 @@
+.full-width-field {
+    width: 100%;
+    display: block;
+    
+}
+.example-margin{
+    margin-top: 1ch;
+    margin-bottom: 2ch;
+}

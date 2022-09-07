@@ -1,0 +1,88 @@
+<mat-card>
+    <mat-card-title style="margin-top: 1cm; margin-bottom: 1cm;">create an account</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+        <div class="example-container">
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="Ex. Pizza" formControlName="name">
+                    <mat-error
+                        *ngIf="!loginForm.get('name')?.errors?.required && (loginForm.get('name')?.errors?.pattern)">
+                        Please enter only characters
+                    </mat-error>
+                    <mat-error
+                        *ngIf="loginForm.get('name')?.invalid && (loginForm.get('name')?.dirty || loginForm.get('name')?.touched) && loginForm.get('name')?.errors?.required">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error
+                        *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error
+                        *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+                        Email is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Password" formControlName="password">
+                    
+                    <mat-error
+                        *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>Comfirm Password</mat-label>
+                    <input matInput type="password" placeholder="Password" formControlName="cpassword">
+                    
+                    <mat-error
+                        *ngIf="loginForm.get('cpassword')?.invalid && (loginForm.get('cpassword')?.dirty || loginForm.get('cpassword')?.touched) && loginForm.get('cpassword')?.errors?.required">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>Interests</mat-label>
+                    <input matInput placeholder="Interests" formControlName="interests">
+                   
+                    <mat-error
+                        *ngIf="loginForm.get('interests')?.invalid && (loginForm.get('interests')?.dirty || loginForm.get('interests')?.touched) && loginForm.get('interests')?.errors?.required">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top-2">
+                <mat-form-field class="full-width-field" appearance="fill">
+                    <mat-label>Preferrd Size</mat-label>
+                    <input matInput placeholder="Preferrd Size" formControlName="preferrdSize">
+                    <mat-error
+                        *ngIf="loginForm.get('preferrdSize')?.invalid && (loginForm.get('preferrdSize')?.dirty || loginForm.get('preferrdSize')?.touched) && loginForm.get('preferrdSize')?.errors?.required">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mt-top">
+                <mat-checkbox class="example-margin">Newsletter</mat-checkbox>
+            </div>
+            <div class="mt-top">
+                <mat-checkbox class="example-margin">By registering you agree with our t&C and privacy policy
+                </mat-checkbox>
+            </div>
+            <div class="mt-top">
+                <button  mat-raised-button color="warn" style="width:100%; " mat-button>create account</button>
+            </div>
+        </div>
+    </form>
+</mat-card>
